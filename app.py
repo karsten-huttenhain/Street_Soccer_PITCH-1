@@ -68,6 +68,10 @@ api.add_resource(Test, '/tests')
 api.add_resource(Quiz, '/quizzes')
 api.add_resource(Answer, '/answers')
 
+@app.route('/create-quiz')
+def createquiz():
+	return render_template('quiz-form.html')
+
 if __name__ == "__main__":
 	
 	app.run(host='127.0.0.1', debug=True)
