@@ -11,7 +11,7 @@ import sys, os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ppexaoxmwjwtff:07bea6754695c0981a17014557d5188f1ee0704c15ecfc21707d8f4bd131141a@ec2-52-209-134-160.eu-west-1.compute.amazonaws.com:5432/d9u1rteur94lh0' 
 api = Api(app)
 jsglue = JSGlue(app)
 database.init_app(app) # this should be in the 'if is main' at the bottom of this file so that the database isn't re-initialized if 'app.py' is imported from another file, but that would mean that the database is never initialized if we run the app via Flask instead of Python
